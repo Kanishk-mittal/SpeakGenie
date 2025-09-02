@@ -5,7 +5,7 @@ const Section1 = () => {
 
     return (
         <div className='w-[80vw] mx-auto py-16'>
-            <div className='flex justify-around items-stretch'>
+            <div className='flex justify-around items-stretch flex-col md:flex-row'>
                 <LeftContent />
                 <RightContent />
             </div>

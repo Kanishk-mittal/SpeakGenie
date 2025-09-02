@@ -39,7 +39,7 @@ const LeftContent = () => {
         }
     ]
     return (
-        <div className="left min-h-40 w-[50%]">
+        <div className="left min-h-40 w-[80%] md:w-[50%]">
             <span className='bg-[#f4f2ff] p-1.5 text-xs font-bold text-[#6930bb] rounded-full'>
                 🌈Calm Minds, Happy Hearts
             </span>
@@ -56,7 +56,7 @@ const LeftContent = () => {
                 <ButtonVoilet label='Start Free Trial' onClick={freeTrialButtonClick} onHover={freeTrialButtonHover} />
                 <ButtonGreen label='Explore Programs' onClick={exploreProgramsClick} onHover={exploreProgramsHover} />
             </div>
-            <div className='flex flex-row justify-between py-8 gap-1'>
+            <div className='flex flex-row justify-between py-8 gap-1 flex-wrap' >
                 {featureCardProps.map((card) => (
                     <FeatureCard {...card} />
                 ))}
