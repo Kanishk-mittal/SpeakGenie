@@ -1,69 +1,69 @@
-# React + TypeScript + Vite
+# SpeakGenie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SpeakGenie is a small React + TypeScript + Vite web app that provides mindfulness and meditation content for children (ages 4–15). The UI is built with Tailwind CSS and aims to be simple, responsive, and easy to extend.
 
-Currently, two official plugins are available:
+## What this repo contains
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- A Vite + React + TypeScript front-end application
+- Tailwind CSS for styling
+- Components for landing/marketing pages (plans, FAQ, reviews, header/footer, etc.)
 
-## Expanding the ESLint configuration
+## Key features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Responsive landing pages and components
+- Lightweight, component-driven architecture using React + TypeScript
+- Fast local dev with Vite and HMR
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Quick start
+
+1. Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Start development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+3. Build for production
+
+```bash
+npm run build
+```
+
+4. Preview production build locally
+
+```bash
+npm run preview
+```
+
+5. Run linter
+
+```bash
+npm run lint
+```
+
+## Project scripts
+
+- `dev` — start Vite development server
+- `build` — typecheck and build production bundle (runs `tsc -b` then `vite build`)
+- `preview` — preview the production build locally
+- `lint` — run ESLint across the project
+
+## Contributing
+
+If you'd like to contribute, open an issue or a pull request. Keep changes small and focused. Run `npm run lint` and ensure TypeScript checks pass before submitting.
+
+## Notes for maintainers
+
+- The project uses `tsconfig.app.json` and `tsconfig.node.json` for type checking/building. Tailwind classes are used throughout; if you add new utilities, update `tailwind.config.js` as needed.
