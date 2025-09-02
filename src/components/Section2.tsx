@@ -25,7 +25,7 @@ const Section2 = () => {
             <div className='w-[50%]'>
                 Children learn best through play and stories. Our session blend gentle breathing, guided imagery, and music to make mindfulness enjoyable and effective.
             </div>
-            <div className='flex flex-row py-4 justify-between'>
+            <div className='flex flex-row md:py-4 justify-between flex-wrap'>
                 {Features.map((feature, index) => (
                     <FeatureCard key={index} tag={feature.tag} description={feature.description} title={feature.title} />
                 ))}
