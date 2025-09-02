@@ -4,6 +4,7 @@ Since this is a single page we are writing everything here which is generally no
 
 import Comparison from "./components/Comparison"
 import Footer from "./components/Footer"
+import FrequentlyAskedQuestions from "./components/FrequentlyAskedQuestions"
 import Header from "./components/Header"
 import ParentTeacherHub from "./components/ParentTeacherHub"
 import Plans from "./components/Plans"
@@ -27,6 +28,7 @@ const App = () => {
       <Plans />
       <ParentTeacherHub />
       <Section5 />
+      <FrequentlyAskedQuestions />
       <Footer />
     </>
   )
