@@ -15,8 +15,12 @@ import Section4 from "./components/Section4"
 import Section5 from "./components/Section5"
 import Section7 from "./components/Section7"
 import SeperatorLine from "./components/SeperatorLine"
+import Popup from "./components/Popup"
+import { PopupProvider, usePopup } from "./contexts/PopupContext"
 
-const App = () => {
+const AppContent = () => {
+  const { isPopupOpen } = usePopup()
+
   return (
     <>
       <Header />
@@ -32,7 +36,16 @@ const App = () => {
       <FrequentlyAskedQuestions />
       <Section7 />
       <Footer />
+      {isPopupOpen && <Popup />}
     </>
+  )
+}
+
+const App = () => {
+  return (
+    <PopupProvider>
+      <AppContent />
+    </PopupProvider>
   )
 }
 
