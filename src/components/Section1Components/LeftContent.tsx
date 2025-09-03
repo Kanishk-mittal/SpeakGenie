@@ -2,10 +2,12 @@ import ButtonVoilet from '../ButtonVoilet'
 import ButtonGreen from '../ButtonGreen'
 import type { FeatureCardProps } from '../../types/Section1'
 import FeatureCard from './FeatureCard'
+import { usePopup } from '../../contexts/PopupContext'
 
 const LeftContent = () => {
+    const { openPopup } = usePopup()
     const freeTrialButtonClick = () => {
-        console.log("Free Trial Button Clicked")
+        openPopup()
     }
     const freeTrialButtonHover = () => {
         console.log("Free Trial Button Hovered")

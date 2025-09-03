@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import ButtonVoilet from "../ButtonVoilet"
 import type { NavItem } from '../../types/NavItem'
+import { usePopup } from '../../contexts/PopupContext'
 
 const Navbar = () => {
+    const { openPopup } = usePopup()
     const navItems: NavItem[] = [
         { title: 'Why' },
         { title: 'Programs' },
@@ -14,7 +16,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
 
     const handleButtonClick = () => {
-        console.log("Button clicked")
+        openPopup()
     }
 
     const handleButtonHover = () => {

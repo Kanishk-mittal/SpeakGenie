@@ -1,9 +1,11 @@
 import ButtonVoilet from './ButtonVoilet'
 import ButtonGreen from './ButtonGreen'
+import { usePopup } from '../contexts/PopupContext'
 
 const Section7 = () => {
+    const { openPopup } = usePopup()
     const handleCreateAccount = () => {
-        console.log("Create Account button clicked")
+        openPopup()
     }
 
     const handleCreateAccountHover = () => {
