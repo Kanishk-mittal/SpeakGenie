@@ -4,4 +4,6 @@ export type PlanCardProps = {
     price: string;
     features: string[];
     buttonText: string;
+    onButtonClick: () => void;
+    onButtonHover: () => void;
 }

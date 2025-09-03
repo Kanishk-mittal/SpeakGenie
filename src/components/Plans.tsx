@@ -1,7 +1,22 @@
 import type { PlanCardProps } from '../types/Plans'
 import PlanCard from './PlansComponents/PlanCard'
+import { usePopup } from '../contexts/PopupContext'
 
 const Plans = () => {
+    const { openPopup } = usePopup()
+
+    const handlePlanButtonClick = (planTitle: string, buttonText: string) => {
+        if (planTitle === "Starter") {
+            openPopup()
+        } else {
+            console.log(`${buttonText} clicked for ${planTitle} plan`)
+        }
+    }
+
+    const handlePlanButtonHover = (planTitle: string, buttonText: string) => {
+        console.log(`${buttonText} hovered for ${planTitle} plan`)
+    }
+
     const plans: PlanCardProps[] = [
         {
             title: "Starter",
@@ -12,7 +27,9 @@ const Plans = () => {
                 "2 sleep stories",
                 "Parent starter kit"
             ],
-            buttonText: "Get Started"
+            buttonText: "Get Started",
+            onButtonClick: () => handlePlanButtonClick("Starter", "Get Started"),
+            onButtonHover: () => handlePlanButtonHover("Starter", "Get Started")
         },
         {
             title: "Premium",
@@ -23,7 +40,9 @@ const Plans = () => {
                 "Sleep stories & calming music",
                 "Printable guides for parents"
             ],
-            buttonText: "Upgrade Now"
+            buttonText: "Upgrade Now",
+            onButtonClick: () => handlePlanButtonClick("Premium", "Upgrade Now"),
+            onButtonHover: () => handlePlanButtonHover("Premium", "Upgrade Now")
         },
         {
             title: "Family",
@@ -34,7 +53,9 @@ const Plans = () => {
                 "Rewards & streaks",
                 "Classroom meditation pack"
             ],
-            buttonText: "Get Family Plan"
+            buttonText: "Get Family Plan",
+            onButtonClick: () => handlePlanButtonClick("Family", "Get Family Plan"),
+            onButtonHover: () => handlePlanButtonHover("Family", "Get Family Plan")
         }
     ]
 

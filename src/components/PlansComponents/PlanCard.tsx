@@ -1,15 +1,7 @@
 import type { PlanCardProps } from "../../types/Plans"
 import ButtonVoilet from "../ButtonVoilet"
 
-const PlanCard = ({ title, subtitle, price, features, buttonText }: PlanCardProps) => {
-    const handleButtonClick = () => {
-        console.log(`${buttonText} clicked for ${title} plan`)
-    }
-
-    const handleButtonHover = () => {
-        console.log(`${buttonText} hovered for ${title} plan`)
-    }
-
+const PlanCard = ({ title, subtitle, price, features, buttonText, onButtonClick, onButtonHover }: PlanCardProps) => {
     return (
         <div className="bg-white rounded-xl shadow-2xl p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col h-full">
             <div className="text-center mb-6">
@@ -32,8 +24,8 @@ const PlanCard = ({ title, subtitle, price, features, buttonText }: PlanCardProp
             <div className="mt-auto text-center">
                 <ButtonVoilet
                     label={buttonText}
-                    onClick={handleButtonClick}
-                    onHover={handleButtonHover}
+                    onClick={onButtonClick}
+                    onHover={onButtonHover}
                 />
             </div>
         </div>
